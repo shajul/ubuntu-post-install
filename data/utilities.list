@@ -1,23 +1,22 @@
-apache2
-aptitude
-dconf-tools
-filezilla
-gnome-disk-utility
-grsync
-icedtea-plugin
 libav-tools
 mediainfo
-network-manager-openvpn
-network-manager-openvpn-gnome
-openjdk-7-jdk
-openssh-server
-openvpn
-openvpn-auth-ldap
-p7zip-full
 ppa-purge
-samba
+samba										# For windows network
 ssh
 symlinks
 synaptic
+unity-tweak-tool
+compizconfig-settings-manager 				# hotkeys and MANY settings
+alacarte		      						# applications menu
+flashplugin-installer         				# for flash in browser
+gparted
+android-tools-adb
+uswsusp                       				# for hibernate to work.
+gnome-panel		      						# see Evernote "Ubuntu" notebook
+mono-dmcs libmono-system-management4.0-cil  # required for Keepass2 to work!!
+dconf-tools
+grub-customizer
+git git-core git-doc git-gui				# GIT
+mtp-tools mtpfs								# MTP filesystem support
 virtualbox
-zsync
+

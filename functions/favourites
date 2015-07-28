@@ -15,13 +15,16 @@ echo 'Installing selected favourite applications...'
 echo ''
 echo 'Current package list:'
 echo ''
+old_IFS=$IFS      # save the field separator           
+IFS=$'\n'     # new field separator, the end of line           
 for package in $(cat $FAVS)
 do
-show_info 'Install '$package'? (Y)es, (N)o : ' && read REPLY1
+show_info 'Package: '$package
+show_info 'Install? (Y)es, (N)o : ' && read REPLY1
 echo ''
 case $REPLY1 in
 [Yy]* )
-    packages="$packages $package"
+    packages="$packages $(echo $package | cut -f1 -d"#" | xargs)"
     ;; 
 * )
     ;;
@@ -29,6 +32,7 @@ esac
 done
 clear && echo 'Packages selected: ' $packages
 show_info 'Proceed? (Y)es, (N)o : ' && read REPLY
+IFS=$old_IFS     # restore default field separator
 echo ''
 case $REPLY in
 # Positive action

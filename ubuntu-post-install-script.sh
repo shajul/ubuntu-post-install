@@ -37,11 +37,8 @@ dir="$(dirname "$0")"
 . $dir/functions/codecs
 . $dir/functions/config
 . $dir/functions/customize
-. $dir/functions/design
 . $dir/functions/development
 . $dir/functions/favourites
-. $dir/functions/gnome
-. $dir/functions/pantheon
 . $dir/functions/system
 . $dir/functions/upgrade
 . $dir/functions/thirdparty
@@ -71,13 +68,10 @@ echo '1. Perform system update & upgrade?'
 echo '2. Install favourite applications?'
 echo '3. Install favourite system utilities?'
 echo '4. Install development tools?'
-echo '5. Install design tools?'
-echo '6. Install extra GNOME components?'
-echo '7. Install extra Pantheon components?'
-echo '8. Install Ubuntu Restricted Extras?'
-echo '9. Install third-party applications?'
-echo '10. Customize system?'
-echo '11. Cleanup the system?'
+echo '5. Install Ubuntu Restricted Extras?'
+echo '6. Install third-party applications?'
+echo '7. Customize system?'
+echo '8. Cleanup the system?'
 echo 'q. Quit?'
 echo ''
 show_info 'Enter your choice :' && read REPLY
@@ -86,13 +80,10 @@ case $REPLY in
     2) clear && favourites;; # Install Favourite Applications
     3) clear && system;; # Install Favourite Tools
     4) clear && development;; # Install Dev Tools
-    5) clear && design;; # Install Design Tools
-    6) clear && gnome;; # Install GNOME components
-    7) clear && pantheon;; # Install GNOME components
-    8) clear && codecs;; # Install Ubuntu Restricted Extras
-    9) clear && thirdparty;; # Install Third-Party Applications
-    10) clear && customize;; # Customize system
-    11) clear && cleanup;; # Cleanup System
+    5) clear && codecs;; # Install Ubuntu Restricted Extras
+    6) clear && thirdparty;; # Install Third-Party Applications
+    7) clear && customize;; # Customize system
+    8) clear && cleanup;; # Cleanup System
     [Qq]* ) echo '' && quit;; # Quit
     * ) clear && show_error '\aNot an option, try again.' && main;;
 esac

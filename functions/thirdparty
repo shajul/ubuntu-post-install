@@ -9,8 +9,7 @@ echo '1. Google Chrome?'
 echo '2. Google Talk Plugin?'
 echo '3. Steam?'
 echo '4. Sublime Text?'
-echo '5. Minecraft Installer?'
-echo '6. Inkscape Stable?'
+echo '5. Inkscape Stable?'
 echo 'r. Return'
 echo ''
 show_info 'Enter your choice:' && read REPLY
@@ -126,23 +125,8 @@ case $REPLY in
     show_success 'Done.'
     thirdparty
     ;;
-# Minecraft Installer
-5)
-    # Add repository
-    echo 'Adding Minecraft Installer PPA to software sources...'
-    show_info 'Requires root privileges:'
-    sudo add-apt-repository ppa:minecraft-installer-peeps/minecraft-installer
-    # Update repository information
-    echo 'Updating repository information...'
-    sudo apt-get update
-    # Install
-    echo 'Installing Minecraft Installer...'
-    sudo apt-get install -y minecraft-installer
-    show_success 'Done.'
-    thirdparty
-    ;;
 # Inkscape Stable
-6)
+5)
     # Add repository
     echo 'Adding Inkscape Stable PPA to software sources...'
     show_info 'Requires root privileges:'
