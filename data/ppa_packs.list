@@ -11,4 +11,5 @@ boot-repair
 indicator-netspeed
 caffeine							# DontSleep
 win-themes win-icons				# Windows Theme
+grub-customizer
 

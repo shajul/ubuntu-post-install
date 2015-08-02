@@ -18,3 +18,4 @@ ppa:webupd8team/y-ppa-manager
 ppa:yannubuntu/boot-repair
 ppa:hanipouspilot/focaltech-dkms				# ASUS touchpad focaltech vivid kernel
 ppa:cardapio-team/cardapio-ppa					# cardapio (nice menu)
+ppa:danielrichter2007/grub-customizer
