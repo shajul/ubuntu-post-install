@@ -8,3 +8,7 @@ autokey
 cardapio							# Menu
 y-ppa-manager
 boot-repair
+indicator-netspeed
+caffeine							# DontSleep
+win-themes win-icons				# Windows Theme
+
