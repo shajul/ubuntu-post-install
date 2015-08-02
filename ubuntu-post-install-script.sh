@@ -42,6 +42,8 @@ dir="$(dirname "$0")"
 . $dir/functions/system
 . $dir/functions/upgrade
 . $dir/functions/thirdparty
+. $dir/functions/ppa
+. $dir/functions/ppa_packs
 
 #----- MESSAGE FUNCTIONS -----#
 
@@ -64,26 +66,30 @@ function main {
 echo ''
 show_info 'What would you like to do? '
 echo ''
+echo '0. Add favourite PPAs to system?'
 echo '1. Perform system update & upgrade?'
 echo '2. Install favourite applications?'
 echo '3. Install favourite system utilities?'
-echo '4. Install development tools?'
-echo '5. Install Ubuntu Restricted Extras?'
-echo '6. Install third-party applications?'
-echo '7. Customize system?'
-echo '8. Cleanup the system?'
+echo '4. Install Favourite PPA packages?'
+echo '5. Install development tools?'
+echo '6. Install Ubuntu Restricted Extras?'
+echo '7. Install third-party applications?'
+echo '8. Customize system?'
+echo '9. Cleanup the system?'
 echo 'q. Quit?'
 echo ''
 show_info 'Enter your choice :' && read REPLY
 case $REPLY in
-    1) upgrade;; # System Upgrade
+    0) ppa;; # Add PPA repositories
+    1) clear && upgrade;; # System Upgrade
     2) clear && favourites;; # Install Favourite Applications
     3) clear && system;; # Install Favourite Tools
-    4) clear && development;; # Install Dev Tools
-    5) clear && codecs;; # Install Ubuntu Restricted Extras
-    6) clear && thirdparty;; # Install Third-Party Applications
-    7) clear && customize;; # Customize system
-    8) clear && cleanup;; # Cleanup System
+    4) clear && ppa_packs;; # Install Favourite PPA packages
+    5) clear && development;; # Install Dev Tools
+    6) clear && codecs;; # Install Ubuntu Restricted Extras
+    7) clear && thirdparty;; # Install Third-Party Applications
+    8) clear && customize;; # Customize system
+    9) clear && cleanup;; # Cleanup System
     [Qq]* ) echo '' && quit;; # Quit
     * ) clear && show_error '\aNot an option, try again.' && main;;
 esac

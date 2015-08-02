@@ -1,0 +1,20 @@
+ppa:jtaylor/keepass
+ppa:freefilesync/ffs
+ppa:nvbn-rm/ppa									# everpad
+ppa:tsbarnes/indicator-keylock
+ppa:dhor/myway									# graphics packages
+ppa:stefansundin/truecrypt
+ppa:ubuntu-wine/ppa
+ppa:caffeine-developers/ppa						# similar to dontsleep
+ppa:diesch/testing								# classicmenu-indicator, indicator-privacy, unsettings  
+ppa:nilarimogard/webupd8						# android-tools
+ppa:flozz/flozz									# nautilus-terminal
+ppa:atareao/atareao								# many indicators
+ppa:cdekter/ppa									# autokey
+ppa:zeitgeist/ppa
+ppa:noobslab/icons								# windows icons
+ppa:noobslab/themes								# windows theme
+ppa:webupd8team/y-ppa-manager
+ppa:yannubuntu/boot-repair
+ppa:hanipouspilot/focaltech-dkms				# ASUS touchpad focaltech vivid kernel
+ppa:cardapio-team/cardapio-ppa					# cardapio (nice menu)

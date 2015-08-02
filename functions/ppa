@@ -1,0 +1,59 @@
+#!/bin/bash
+
+#----- DECLARATIONS -----#
+
+dir="$(dirname "$0")"
+
+PPAs="$dir/data/ppa.list"
+
+# INSTALL APPLICATIONS
+function ppa {
+	packages=''
+	# Install Favourite Applications
+	echo ''
+	echo 'Adding repositories...'
+	echo ''
+	echo 'Current repository list:'
+	echo ''
+	old_IFS=$IFS      # save the field separator           
+	IFS=$'\n'     # new field separator, the end of line           
+	for package in $(cat $PPAs)
+	do
+		show_info 'Repository: '$package
+		show_info 'Install? (Y)es, (N)o : ' && read REPLY1
+		echo ''
+		case $REPLY1 in
+		[Yy]* )
+			packages="$packages $(echo $package | cut -f1 -d"#" | xargs)"
+			;; 
+		* )
+			;;
+		esac
+	done
+	clear && echo 'Packages selected: ' $packages
+	show_info 'Proceed? (Y)es, (N)o : ' && read REPLY
+	IFS=$old_IFS     # restore default field separator
+	echo ''
+	case $REPLY in
+	# Positive action
+	[Yy]* ) 
+		show_info 'Requires root privileges:'
+		# Feel free to change the contents of 'ppa.list' in the data folder.
+		# To generate the list on old computer, see script in /res folder
+		for f in $packages; do 
+			sudo apt-add-repository -y $f;
+		done
+		show_success 'Done.'
+		main
+		;;
+	# Negative action
+	[Nn]* )
+		clear && main
+		;;
+	# Error
+	* )
+		clear && show_error '\aSorry, try again.'
+		ppa
+		;;
+	esac
+}
